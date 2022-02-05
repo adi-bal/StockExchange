@@ -2,10 +2,10 @@ from orders import *
 from quotes import * 
 from controllers import *
 
-buy_orders = []
-sell_orders = []
-order_list = []
-bid = dict() #using a dicionary for constant lookup time
+buy_orders = []     #list to store buy order objects
+sell_orders = []      #list to store sell order objects
+order_list = []        # list to store all order objects
+bid = dict()    # dictionary to store all quote objects
 
 
 while True:     # loop receives and validates user input 

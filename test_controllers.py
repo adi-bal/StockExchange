@@ -2,6 +2,8 @@ import unittest
 from controllers import *
 from orders import *
 
+#input is validated by main function the following tests validate the working of the controllers
+
 buy_order_list_limit =[
     orders("BUY", "SNAP", "LMT", 95, 22)
     
