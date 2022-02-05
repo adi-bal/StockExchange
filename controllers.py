@@ -1,4 +1,4 @@
-def view_orders(order_list):
+def view_orders(order_list): 
     num = 1
     for order in order_list:
         if(order.price is None):
@@ -7,7 +7,7 @@ def view_orders(order_list):
             print("{}. {} {} {} ${} {}/{} {}".format(num, order.share_name, order.limit, order.type, order.price, order.filled, order.qty, order.status))
         num +=1
 
-def transfer_share(buy_order, sell_order):      #transfers shares and updates latest transaction
+def transfer_share(buy_order, sell_order, bid = None):      #transfers shares and updates latest transaction
     try:
         n_sell = sell_order.qty - sell_order.filled
         n_buy = buy_order.qty - buy_order.filled
@@ -36,10 +36,14 @@ def transfer_share(buy_order, sell_order):      #transfers shares and updates la
     elif buy_order.filled > 0:
         buy_order.status = "PARTIAL"
 
-    if buy_order.limit == "LMT":
-        bid[buy_order.share_name].last = buy_order.price
-    elif sell_order.limit == "LMT":
-        bid[sell_order.share_name].last = sell_order.price
+    try:
+        if buy_order.limit == "LMT":
+            bid[buy_order.share_name].last = buy_order.price
+        elif sell_order.limit == "LMT":
+            bid[sell_order.share_name].last = sell_order.price
+    except TypeError:
+        pass
+
 
 
 def resolve_order(order_list, buy_orders, sell_orders):  #resolves order, called eveytime a new order is placed
