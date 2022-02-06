@@ -29,7 +29,7 @@ def transfer_share(buy_order, sell_order, bid = None):      #transfers shares an
     if sell_order.qty == sell_order.filled:     #updating the status of orders
         sell_order.status = "FILLED"
     elif sell_order.filled > 0:
-        sell_order.status == "PARTIAL"
+        sell_order.status = "PARTIAL"
     
     if buy_order.qty == buy_order.filled:
         buy_order.status = "FILLED"
