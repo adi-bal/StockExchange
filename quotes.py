@@ -5,7 +5,7 @@ class quote:        #class to store quotes of each unique quote
         self.ask = 0.0
         self.last = 0.0
     
-    def get_quote(self):    #perfroms linear search on the buy and sell order list to retrieve bid and ask
+    def get_quote(self, buy_orders, sell_orders):    #perfroms linear search on the buy and sell order list to retrieve bid and ask
         find_bid = 0
         for buy in buy_orders:
             if(buy.share_name == self.share_name and buy.price is not None and buy.status != "FILLED"):
@@ -20,6 +20,6 @@ class quote:        #class to store quotes of each unique quote
         if find_ask != float("inf"):
             self.ask = find_ask
     
-    def view(self):
-        self.get_quote()
+    def view(self, buy_orders, sell_orders):
+        self.get_quote(buy_orders, sell_orders)
         print("{} BID: ${} ASK: ${} LAST: ${}".format(self.share_name, self.bid, self.ask, self.last))
