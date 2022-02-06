@@ -25,3 +25,6 @@ $ python3 test_transfer_share.py
 4. To quit the main programma anytime type QUIT (case sensitive) after the action prompt
 
 # Functionalities 
+1. THe stock Exchange supports all functionalites mentioned in the documentations
+2. Market prices are assumed to be 0 by default if there are no active orders. 
+3. All commands are case sensitive, and must be capitalised 
