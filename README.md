@@ -30,7 +30,7 @@ $ python3 test_transfer_share.py
 3. All commands are case sensitive, and must be capitalised.
 4. User input is prefixed by Action. 
 
-# Sample run of the programme
+# Sample run of the program
 
 ```
 Action: BUY SNAP LMT $30 100
