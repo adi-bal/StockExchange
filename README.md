@@ -1,5 +1,5 @@
 # Simple Stock Exchange 
-The simple Stock exchange is a mini pre - interview project created for Hedge Fund Capital Management
+The simple Stock exchange is a mini project that i created to understand OOPS principles in pythona and gain insight on unit testing
 
 # Getting Started 
 
